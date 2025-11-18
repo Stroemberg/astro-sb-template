@@ -11,9 +11,17 @@ const { slug } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 
-const { data } = await storyblokApi.get(`cdn/stories/${slug || 'home'}`, {
-	version: 'draft',
-});
+const { data } = await storyblokApi
+	.get(`cdn/stories/${slug || 'home'}`, {
+		version: 'draft',
+	})
+	.catch((error) => {
+		return { data: { status: error.response.status } };
+	});
+
+if (data.status === 404) {
+	return Astro.redirect('/404');
+}
 
 const story = data.story;
 const liveStory = await getLiveStory(Astro);
