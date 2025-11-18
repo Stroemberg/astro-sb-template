@@ -1,63 +1,5 @@
 [
   {
-    "name": "feature",
-    "display_name": null,
-    "description": null,
-    "created_at": "2025-11-14T12:42:10.724Z",
-    "updated_at": "2025-11-14T12:42:10.724Z",
-    "id": 112371837852562,
-    "schema": {
-      "name": {
-        "type": "text",
-        "id": "ole2YXK1S9evwNGxZL-2Kw"
-      }
-    },
-    "image": null,
-    "preview_field": null,
-    "is_root": false,
-    "preview_tmpl": null,
-    "is_nestable": true,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "feature",
-    "component_group_uuid": null,
-    "color": null,
-    "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
-    "content_type_asset_preview": null,
-    "metadata": {}
-  },
-  {
-    "name": "grid",
-    "display_name": null,
-    "description": null,
-    "created_at": "2025-11-14T12:42:10.711Z",
-    "updated_at": "2025-11-14T12:42:10.711Z",
-    "id": 112371837799313,
-    "schema": {
-      "columns": {
-        "type": "bloks",
-        "id": "E6YSsRe6TomD-EWHan2KAg"
-      }
-    },
-    "image": null,
-    "preview_field": null,
-    "is_root": false,
-    "preview_tmpl": null,
-    "is_nestable": true,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "grid",
-    "component_group_uuid": null,
-    "color": null,
-    "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
-    "content_type_asset_preview": null,
-    "metadata": {}
-  },
-  {
     "name": "page",
     "display_name": null,
     "description": null,
@@ -78,35 +20,6 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "page",
-    "component_group_uuid": null,
-    "color": null,
-    "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
-    "content_type_asset_preview": null,
-    "metadata": {}
-  },
-  {
-    "name": "teaser",
-    "display_name": null,
-    "description": null,
-    "created_at": "2025-11-14T12:42:10.698Z",
-    "updated_at": "2025-11-14T12:42:10.698Z",
-    "id": 112371837746064,
-    "schema": {
-      "headline": {
-        "type": "text",
-        "id": "OJbFxnXBTUy2-cE4JD2ytA"
-      }
-    },
-    "image": null,
-    "preview_field": null,
-    "is_root": false,
-    "preview_tmpl": null,
-    "is_nestable": true,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "teaser",
     "component_group_uuid": null,
     "color": null,
     "icon": null,

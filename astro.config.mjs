@@ -22,9 +22,6 @@ export default defineConfig({
 			},
 			components: {
 				page: 'storyblok/Page',
-				grid: 'storyblok/Grid',
-				feature: 'storyblok/Feature',
-				teaser: 'storyblok/Teaser',
 			},
 			livePreview: true,
 		}),
