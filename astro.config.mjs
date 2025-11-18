@@ -3,6 +3,8 @@ import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
 
+import tailwindcss from '@tailwindcss/vite';
+
 const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
 const { STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_API_BASE_URL } = env;
 
@@ -29,6 +31,6 @@ export default defineConfig({
 	],
 	output: 'server',
 	vite: {
-		plugins: [mkcert()],
+		plugins: [mkcert(), tailwindcss()],
 	},
 });
