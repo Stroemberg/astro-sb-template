@@ -1,4 +1,4 @@
-import { getLinks } from '../utils/api';
+import { getLinks } from './api';
 
 const links = await getLinks();
 
