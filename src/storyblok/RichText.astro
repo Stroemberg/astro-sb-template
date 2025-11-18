@@ -1,0 +1,16 @@
+---
+import { renderRichText, type StoryblokRichTextNode } from '@storyblok/astro';
+import { storyblokEditable } from '../utils/storyblokEditable';
+import type { StoryblokRichText } from '../../.storyblok/types/288498216560234/storyblok-components';
+
+type Props = {
+	blok: StoryblokRichText;
+};
+
+const { blok } = Astro.props;
+const renderedContent = renderRichText(
+	blok.content as StoryblokRichTextNode<string>,
+);
+---
+
+<div class="prose" {...storyblokEditable(blok)} set:html={renderedContent} />

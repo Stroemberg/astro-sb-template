@@ -22,6 +22,7 @@ export default defineConfig({
 			},
 			components: {
 				page: 'storyblok/Page',
+				rich_text: 'storyblok/RichText',
 			},
 			livePreview: true,
 		}),
