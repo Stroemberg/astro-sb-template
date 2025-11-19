@@ -1,6 +1,17 @@
 ---
-const currentYear = new Date().getFullYear();
-import "../styles/global.css";
+import type { StoryblokGlobal } from '../../.storyblok/types/288498216560234/storyblok-components';
+import Header from '../storyblok/Header.astro';
+import Footer from '../storyblok/Footer.astro';
+import '../styles/global.css';
+
+type Props = {
+	global: StoryblokGlobal;
+};
+
+const { global } = Astro.props;
+
+const footer = global.footer?.[0];
+const header = global.header?.[0];
 ---
 
 <!doctype html>
@@ -14,7 +25,8 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
+		{header && <Header blok={header} />}
 		<slot />
-		<footer>All rights reserved © {currentYear}</footer>
+		{footer && <Footer blok={footer} />}
 	</body>
 </html>

@@ -1,0 +1,14 @@
+---
+import { storyblokEditable } from '../utils/storyblokEditable';
+import type { StoryblokHeader } from '../../.storyblok/types/288498216560234/storyblok-components';
+
+type Props = {
+	blok: StoryblokHeader;
+};
+
+const { blok } = Astro.props;
+---
+
+<header {...storyblokEditable(blok)}>
+	{blok.content && <p>{blok.content}</p>}
+</header>
