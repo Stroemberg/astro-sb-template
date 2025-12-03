@@ -24,10 +24,10 @@ export default defineConfig({
 				page: 'storyblok/Page',
 				rich_text: 'storyblok/RichText',
 			},
-			livePreview: true,
+			livePreview: import.meta.env.DEV,
 		}),
 	],
-	output: 'server',
+	output: import.meta.env.PROD ? 'static' : 'server',
 	vite: {
 		plugins: [mkcert(), tailwindcss()],
 	},

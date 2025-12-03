@@ -1,13 +1,45 @@
 ---
+import { useStoryblokApi } from '@storyblok/astro';
 import Layout from '../layouts/Layout.astro';
+import type { StoryblokGlobal } from '../../.storyblok/types/288498216560234/storyblok-components';
+
+const storyblokApi = useStoryblokApi();
+let globalData;
+
+try {
+	const result = await storyblokApi.getStory('global', {
+		version: import.meta.env.DEV ? 'draft' : 'published',
+	});
+	globalData = result.data;
+} catch (error) {
+	console.error('Error fetching global story:', error);
+	// Fallback to draft if published fails (optional, but helpful for debugging/initial setup)
+	try {
+		const result = await storyblokApi.getStory('global', { version: 'draft' });
+		globalData = result.data;
+	} catch (e) {
+		console.error('Error fetching global story fallback:', e);
+	}
+}
+
+// Ensure globalData is available to prevent crash, though Layout might look broken
+if (!globalData) {
+	globalData = { story: { content: {} } };
+}
 ---
 
-<Layout title="404 - Page Not Found">
-    <div class="mx-auto flex min-h-screen max-w-[1600px] flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        <h1 class="mb-4 text-4xl font-bold">404</h1>
-        <p class="mb-8 text-xl text-gray-600">Page not found</p>
-        <a href="/" class="rounded bg-blue-600 px-6 py-3 text-white hover:bg-blue-700">
-            Go back home
-        </a>
-    </div>
+<Layout global={globalData.story.content as StoryblokGlobal}>
+	<div
+		class="mx-auto flex min-h-screen max-w-[1600px] flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
+	>
+		<h1 class="mb-4 text-4xl font-bold">404</h1>
+		<p class="mb-8 text-xl text-gray-600">Page not found</p>
+		<a
+			href="/"
+			class="rounded bg-blue-600 px-6 py-3 text-white hover:bg-blue-700"
+		>
+			Go back home
+		</a>
+	</div>
 </Layout>
+``

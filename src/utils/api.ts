@@ -4,8 +4,7 @@ export async function getLinks() {
   const storyblokApi = useStoryblokApi()
   try {
     const links = await storyblokApi.getAll('cdn/links', {
-        //version: isPreview() ? 'draft' : 'published',
-      version: 'draft'
+      version: import.meta.env.DEV ? 'draft' : 'published',
     })
     return links
   } catch (error) {

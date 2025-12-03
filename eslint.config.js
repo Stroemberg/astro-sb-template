@@ -4,7 +4,9 @@ export default [
 	...eslintPluginAstro.configs.recommended,
 	{
 		rules: {
-			// Add your custom rules here
+			'@typescript-eslint/consistent-type-exports': 'error',
+			'@typescript-eslint/consistent-type-imports': 'error',
 		},
+		files: ['**/*.ts'],
 	},
 ];

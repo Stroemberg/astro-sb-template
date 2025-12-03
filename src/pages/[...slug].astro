@@ -14,7 +14,7 @@ const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi
 	.get(`cdn/stories/${slug || 'home'}`, {
-		version: 'draft',
+		version: import.meta.env.DEV ? 'draft' : 'published',
 	})
 	.catch((error) => {
 		return { data: { status: error.response.status } };
@@ -25,13 +25,11 @@ if (data.status === 404) {
 }
 
 const { data: globalData } = await storyblokApi.getStory('global', {
-	version: 'draft',
+	version: import.meta.env.DEV ? 'draft' : 'published',
 });
 
 const story = data.story;
 const liveStory = await getLiveStory(Astro);
-
-console.log("SLU", globalData)
 ---
 
 <Layout global={globalData.story.content as StoryblokGlobal}>
