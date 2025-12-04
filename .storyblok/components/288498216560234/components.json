@@ -113,12 +113,32 @@
     "display_name": null,
     "description": null,
     "created_at": "2025-11-14T12:42:10.682Z",
-    "updated_at": "2025-11-14T12:42:10.682Z",
+    "updated_at": "2025-12-04T12:06:49.032Z",
     "id": 112371837680527,
     "schema": {
       "body": {
         "type": "bloks",
         "id": "Uw1pigYmTOyIbjbudWSRFg"
+      },
+      "tab-e2daa2b5-aa40-4358-8375-aa675d5d76a7": {
+        "display_name": "SEO",
+        "keys": [
+          "seo"
+        ],
+        "pos": 0,
+        "type": "tab",
+        "id": "4tqitapAQ1iDdapnXV12pw"
+      },
+      "seo": {
+        "type": "bloks",
+        "pos": 2,
+        "maximum": 1,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "seo_fields"
+        ],
+        "id": "vcLF8vX5RpumFXPeryXlnw"
       }
     },
     "image": null,
@@ -159,6 +179,90 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "rich_text",
+    "component_group_uuid": null,
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "seo_fields",
+    "display_name": null,
+    "description": "Fields to improve SEO",
+    "created_at": "2025-12-04T10:16:39.416Z",
+    "updated_at": "2025-12-04T12:01:22.672Z",
+    "id": 119413962414144,
+    "schema": {
+      "meta_title": {
+        "type": "text",
+        "pos": 0,
+        "id": "L9qEsTmYSv-x3cZwxmhipA",
+        "max_length": 70,
+        "description": "Used for <title>. Aim for 50–60 characters. If empty, fallback to page title."
+      },
+      "meta_description": {
+        "type": "textarea",
+        "pos": 1,
+        "id": "77SondUtT9SQ63uvO1KXZQ",
+        "max_length": 160,
+        "description": "Used for meta description. Aim for 120–160 characters."
+      },
+      "canonical_url": {
+        "type": "text",
+        "pos": 2,
+        "id": "VsiSS5XVSemOoOYieW3bRw",
+        "regex": "^https?://",
+        "description": "Absolute URL of the canonical page. Example: https://www.example.com/page"
+      },
+      "og_image": {
+        "type": "asset",
+        "pos": 3,
+        "id": "-Z1QADAnT-qn8TQKtvIZyA",
+        "description": "1200×630 px recommended. Used for social sharing previews.",
+        "filetypes": [
+          "images"
+        ]
+      },
+      "meta_robots": {
+        "type": "option",
+        "pos": 4,
+        "use_uuid": true,
+        "id": "jAC3cCeqRvKladZQiCqVDg",
+        "description": "Controls search engine indexing/crawling.",
+        "options": [
+          {
+            "_uid": "d655c4c9-b961-41f2-9a0b-78d9bddd1418",
+            "name": "Index and follow",
+            "value": "index,follow"
+          },
+          {
+            "_uid": "206e2d53-3d72-42de-82b0-9b8da05e94d7",
+            "value": "noindex,follow",
+            "name": "Noindex but follow"
+          },
+          {
+            "_uid": "0b6d2390-6d60-4841-bf9b-a976fd69a659",
+            "value": "index,nofollow",
+            "name": "Index but nofollow"
+          },
+          {
+            "_uid": "4d650789-1bef-4642-94c0-42ecef57cfb3",
+            "value": "noindex,nofollow",
+            "name": "Noindex and nofollow"
+          }
+        ]
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "seo_fields",
     "component_group_uuid": null,
     "color": null,
     "icon": null,

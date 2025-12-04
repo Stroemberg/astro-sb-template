@@ -1,14 +1,22 @@
 ---
-import type { StoryblokGlobal } from '../../.storyblok/types/288498216560234/storyblok-components';
+import type {
+	StoryblokGlobal,
+	StoryblokSeoFields,
+} from '../../.storyblok/types/288498216560234/storyblok-components';
 import Header from '../storyblok/Header.astro';
 import Footer from '../storyblok/Footer.astro';
 import '../styles/global.css';
 
 type Props = {
 	global: StoryblokGlobal;
+	seo: StoryblokSeoFields | undefined;
 };
 
-const { global } = Astro.props;
+const COMPANY_TITLE = 'Company';
+
+const { global, seo } = Astro.props;
+
+const title = seo?.meta_title || COMPANY_TITLE;
 
 const footer = global.footer?.[0];
 const header = global.header?.[0];
@@ -19,7 +27,7 @@ const header = global.header?.[0];
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>Storyblok & Astro</title>
+		<title>{title}</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />

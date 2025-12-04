@@ -1,9 +1,24 @@
 ---
-import { useStoryblokApi, getLiveStory } from '@storyblok/astro';
+import {
+	useStoryblokApi,
+	getLiveStory,
+	type ISbStoryData,
+	type SbBlokData,
+} from '@storyblok/astro';
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 import Layout from '../layouts/Layout.astro';
 import generateStaticPaths from '../utils/generateStaticPaths';
-import type { StoryblokGlobal } from '../../.storyblok/types/288498216560234/storyblok-components';
+import type {
+	StoryblokGlobal,
+	StoryblokPage,
+} from '../../.storyblok/types/288498216560234/storyblok-components';
+
+type StoryblokApiResponse<T> = {
+	data: {
+		story: ISbStoryData<T>;
+		status: number | undefined;
+	};
+};
 
 export async function getStaticPaths() {
 	return await generateStaticPaths();
@@ -12,13 +27,13 @@ const { slug } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 
-const { data } = await storyblokApi
+const { data } = (await storyblokApi
 	.get(`cdn/stories/${slug || 'home'}`, {
 		version: import.meta.env.DEV ? 'draft' : 'published',
 	})
 	.catch((error) => {
 		return { data: { status: error.response.status } };
-	});
+	})) as StoryblokApiResponse<StoryblokPage>;
 
 if (data.status === 404) {
 	return Astro.redirect('/404');
@@ -32,6 +47,11 @@ const story = data.story;
 const liveStory = await getLiveStory(Astro);
 ---
 
-<Layout global={globalData.story.content as StoryblokGlobal}>
-	<StoryblokComponent blok={liveStory?.content || story.content} />
+<Layout
+	global={globalData.story.content as StoryblokGlobal}
+	seo={story.content.seo?.[0]}
+>
+	<StoryblokComponent
+		blok={liveStory?.content || (story.content as SbBlokData)}
+	/>
 </Layout>
