@@ -12,7 +12,7 @@ const COMPANY_TITLE = 'Company';
 
 type Props = {
 	global: StoryblokGlobal;
-	seo: StoryblokSeoFields | undefined;
+	seo: Partial<StoryblokSeoFields> | undefined;
 };
 
 const { global, seo } = Astro.props;

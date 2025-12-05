@@ -1,0 +1,11 @@
+---
+import { storyblokEditable } from '../utils/storyblokEditable';
+import type { StoryblokLink } from '../../.storyblok/types/288498216560234/storyblok-components';
+
+type Props = {
+	blok: StoryblokLink;
+};
+const { blok } = Astro.props;
+---
+
+<a {...storyblokEditable(blok)} href={blok.link.cached_url}>{blok.text}</a>

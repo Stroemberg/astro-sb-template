@@ -6,7 +6,7 @@ import mkcert from 'vite-plugin-mkcert';
 import tailwindcss from '@tailwindcss/vite';
 
 const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
-const { STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_API_BASE_URL } = env;
+const { STORYBLOK_DELIVERY_API_TOKEN } = env;
 
 export default defineConfig({
 	integrations: [
@@ -16,19 +16,19 @@ export default defineConfig({
 				/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
 				region: 'eu',
 				/** The following code is only required when creating a Storyblok space directly via the Blueprints feature. */
-				endpoint: STORYBLOK_API_BASE_URL
-					? `${new URL(STORYBLOK_API_BASE_URL).origin}/v2`
-					: undefined,
 			},
 			components: {
 				page: 'storyblok/Page',
 				rich_text: 'storyblok/RichText',
+				link: 'storyblok/Link',
 			},
+			enableFallbackComponent: true,
 			livePreview: import.meta.env.DEV,
+			bridge: import.meta.env.DEV,
 		}),
 	],
 	output: import.meta.env.PROD ? 'static' : 'server',
 	vite: {
-		plugins: [mkcert(), tailwindcss()],
+		plugins: [import.meta.env.DEV ? mkcert() : undefined, tailwindcss()],
 	},
 });

@@ -44,7 +44,7 @@ const { data: globalData } = await storyblokApi.getStory('global', {
 });
 
 const story = data.story;
-const liveStory = await getLiveStory(Astro);
+const liveStory = import.meta.env.DEV ? await getLiveStory(Astro) : null;
 ---
 
 <Layout

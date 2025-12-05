@@ -28,7 +28,10 @@ if (!globalData) {
 }
 ---
 
-<Layout global={globalData.story.content as StoryblokGlobal}>
+<Layout
+	global={globalData.story.content as StoryblokGlobal}
+	seo={{ meta_title: '404 - Page not found' }}
+>
 	<div
 		class="mx-auto flex min-h-screen max-w-[1600px] flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
 	>
