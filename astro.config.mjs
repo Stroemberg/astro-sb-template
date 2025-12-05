@@ -29,6 +29,8 @@ export default defineConfig({
 	],
 	output: import.meta.env.PROD ? 'static' : 'server',
 	vite: {
-		plugins: [import.meta.env.DEV ? mkcert() : undefined, tailwindcss()],
+		plugins: [import.meta.env.DEV ? mkcert() : undefined, tailwindcss()].filter(
+			Boolean,
+		),
 	},
 });

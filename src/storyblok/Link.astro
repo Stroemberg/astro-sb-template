@@ -8,4 +8,6 @@ type Props = {
 const { blok } = Astro.props;
 ---
 
-<a {...storyblokEditable(blok)} href={blok.link.cached_url}>{blok.text}</a>
+<a class="underline" {...storyblokEditable(blok)} href={blok.link.cached_url}
+	>{blok.text}
+</a>
