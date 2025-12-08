@@ -32,7 +32,7 @@ export default defineConfig({
 			bridge: enableLivePreview,
 		}),
 	],
-	output: enableLivePreview ? 'static' : 'server',
+	output: enableLivePreview ? 'server' : 'static',
 	vite: {
 		plugins: [import.meta.env.DEV ? mkcert() : undefined, tailwindcss()].filter(
 			Boolean,
