@@ -44,7 +44,13 @@ const header = global.header?.[0];
 	</head>
 	<body>
 		{header && <Header blok={header} />}
-		<slot />
+
+		<div class="w-full flex justify-center">
+			<main class="w-full max-w-[1600px] px-4 sm:px-6 lg:px-10">
+				<slot />
+			</main>
+		</div>
+
 		{footer && <Footer blok={footer} />}
 	</body>
 </html>

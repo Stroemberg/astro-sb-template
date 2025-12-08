@@ -11,10 +11,10 @@ type Props = {
 const { blok } = Astro.props;
 ---
 
-<main {...storyblokEditable(blok)}>
+<Fragment {...storyblokEditable(blok)}>
 	{
 		blok.body?.map((nestedBlok) => {
 			return <StoryblokComponent blok={nestedBlok as SbBlokData} />;
 		})
 	}
-</main>
+</Fragment>
