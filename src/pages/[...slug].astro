@@ -13,6 +13,9 @@ import type {
 	StoryblokPage,
 } from '../../.storyblok/types/288498216560234/storyblok-components';
 
+const isLivePreview =
+	import.meta.env.DEV || import.meta.env.STORYBLOK_LIVE_PREVIEW === 'true';
+
 type StoryblokApiResponse<T> = {
 	data: {
 		story: ISbStoryData<T>;
@@ -29,7 +32,7 @@ const storyblokApi = useStoryblokApi();
 
 const { data } = (await storyblokApi
 	.get(`cdn/stories/${slug || 'home'}`, {
-		version: import.meta.env.DEV ? 'draft' : 'published',
+		version: isLivePreview ? 'draft' : 'published',
 	})
 	.catch((error) => {
 		return { data: { status: error.response.status } };
@@ -40,11 +43,11 @@ if (data.status === 404) {
 }
 
 const { data: globalData } = await storyblokApi.getStory('global', {
-	version: import.meta.env.DEV ? 'draft' : 'published',
+	version: isLivePreview ? 'draft' : 'published',
 });
 
 const story = data.story;
-const liveStory = import.meta.env.DEV ? await getLiveStory(Astro) : null;
+const liveStory = isLivePreview ? await getLiveStory(Astro) : null;
 ---
 
 <Layout

@@ -7,7 +7,9 @@ import Header from '../storyblok/Header.astro';
 import Footer from '../storyblok/Footer.astro';
 import '../styles/global.css';
 
-const isProd = import.meta.env.PROD;
+const isProd =
+	import.meta.env.PROD && import.meta.env.STORYBLOK_PREVIEW !== 'true';
+
 const COMPANY_TITLE = 'Company';
 
 type Props = {

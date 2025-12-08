@@ -6,12 +6,17 @@ import mkcert from 'vite-plugin-mkcert';
 import tailwindcss from '@tailwindcss/vite';
 
 const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
-const { STORYBLOK_DELIVERY_API_TOKEN } = env;
+const { STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_PUBLISHED_TOKEN } = env;
+
+const enableLivePreview =
+	import.meta.env.DEV || env.ENABLE_LIVE_PREVIEW === 'true';
 
 export default defineConfig({
 	integrations: [
 		storyblok({
-			accessToken: STORYBLOK_DELIVERY_API_TOKEN,
+			accessToken: enableLivePreview
+				? STORYBLOK_DELIVERY_API_TOKEN
+				: STORYBLOK_PUBLISHED_TOKEN,
 			apiOptions: {
 				/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
 				region: 'eu',
@@ -23,11 +28,11 @@ export default defineConfig({
 				link: 'storyblok/Link',
 			},
 			enableFallbackComponent: true,
-			livePreview: import.meta.env.DEV,
-			bridge: import.meta.env.DEV,
+			livePreview: enableLivePreview,
+			bridge: enableLivePreview,
 		}),
 	],
-	output: import.meta.env.PROD ? 'static' : 'server',
+	output: enableLivePreview ? 'static' : 'server',
 	vite: {
 		plugins: [import.meta.env.DEV ? mkcert() : undefined, tailwindcss()].filter(
 			Boolean,
