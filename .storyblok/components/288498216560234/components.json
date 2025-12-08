@@ -4,13 +4,81 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-11-19T09:27:29.613Z",
-    "updated_at": "2025-11-19T09:27:52.243Z",
+    "updated_at": "2025-12-08T10:18:54.704Z",
     "id": 114093464020448,
     "schema": {
-      "content": {
-        "type": "text",
+      "column_one_group": {
+        "type": "section",
         "pos": 0,
-        "id": "3JR2fLbQTSyjK6vwxhiWaQ"
+        "keys": [
+          "column_one",
+          "column_one_title"
+        ],
+        "id": "4zE4fHTcRw24ASF9LRkZVQ"
+      },
+      "column_one_title": {
+        "type": "text",
+        "pos": 1,
+        "id": "-4aff1r_T22H7Nset7NcsA"
+      },
+      "column_one": {
+        "type": "bloks",
+        "pos": 2,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "link"
+        ],
+        "id": "2NACwZJySpmmszITSk-xLQ"
+      },
+      "column_two_group": {
+        "type": "section",
+        "pos": 3,
+        "keys": [
+          "column_two_title",
+          "column_two"
+        ],
+        "id": "rQDPEbmlTge9-HKPvie6Tw"
+      },
+      "column_two_title": {
+        "type": "text",
+        "pos": 4,
+        "id": "XB5Fm8u-Q8WKfhE7HhZMpQ"
+      },
+      "column_two": {
+        "type": "bloks",
+        "pos": 5,
+        "id": "P3bfV2o5RlyrFJkRBT2v7g",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "link"
+        ]
+      },
+      "column_three_group": {
+        "type": "section",
+        "pos": 6,
+        "id": "38pelNUNRKqpedDfajOQ5Q",
+        "keys": [
+          "column_three",
+          "column_three_title"
+        ]
+      },
+      "column_three_title": {
+        "type": "text",
+        "pos": 7,
+        "id": "jSQHta6DRbCQvo_lajgEIA"
+      },
+      "column_three": {
+        "type": "bloks",
+        "pos": 8,
+        "id": "G55HtgYfTYGp4UfyyB4twA",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "link"
+        ],
+        "component_denylist": []
       }
     },
     "image": null,

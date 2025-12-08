@@ -2,7 +2,15 @@
 // DO NOT MODIFY THIS FILE BY HAND.
 import type { StoryblokAsset, StoryblokRichtext, StoryblokMultilink } from '../storyblok.d.ts';
 export interface StoryblokFooter {
-  content?: string;
+  column_one_group?: unknown;
+  column_one_title?: string;
+  column_one?: StoryblokLink[];
+  column_two_group?: unknown;
+  column_two_title?: string;
+  column_two?: StoryblokLink[];
+  column_three_group?: unknown;
+  column_three_title?: string;
+  column_three?: StoryblokLink[];
   component: "footer";
   _uid: string;
   [k: string]: unknown;
