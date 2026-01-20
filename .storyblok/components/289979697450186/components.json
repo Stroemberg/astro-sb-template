@@ -3,9 +3,9 @@
     "name": "footer",
     "display_name": null,
     "description": "",
-    "created_at": "2025-11-19T09:27:29.613Z",
-    "updated_at": "2025-12-08T10:18:54.704Z",
-    "id": 114093464020448,
+    "created_at": "2026-01-20T12:27:44.224Z",
+    "updated_at": "2026-01-20T12:27:44.224Z",
+    "id": 136079213466946,
     "schema": {
       "column_one_group": {
         "type": "section",
@@ -89,7 +89,7 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "footer",
-    "component_group_uuid": "35381907-dc51-480d-aab5-57854dbbc63c",
+    "component_group_uuid": "4bf15590-1779-4468-94b8-8d343fc37543",
     "color": null,
     "icon": null,
     "internal_tags_list": [],
@@ -101,9 +101,9 @@
     "name": "global",
     "display_name": null,
     "description": "",
-    "created_at": "2025-11-19T09:15:10.144Z",
-    "updated_at": "2025-11-19T10:32:56.164Z",
-    "id": 114090435155264,
+    "created_at": "2026-01-20T12:27:44.705Z",
+    "updated_at": "2026-01-20T12:27:44.705Z",
+    "id": 136079215441220,
     "schema": {
       "header": {
         "type": "bloks",
@@ -138,7 +138,7 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "global",
-    "component_group_uuid": "35381907-dc51-480d-aab5-57854dbbc63c",
+    "component_group_uuid": "4bf15590-1779-4468-94b8-8d343fc37543",
     "color": null,
     "icon": null,
     "internal_tags_list": [],
@@ -150,9 +150,9 @@
     "name": "header",
     "display_name": null,
     "description": "",
-    "created_at": "2025-11-19T09:26:24.865Z",
-    "updated_at": "2025-11-19T09:27:17.881Z",
-    "id": 114093198812634,
+    "created_at": "2026-01-20T12:27:44.399Z",
+    "updated_at": "2026-01-20T12:27:44.399Z",
+    "id": 136079214187843,
     "schema": {
       "content": {
         "type": "text",
@@ -168,41 +168,7 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "header",
-    "component_group_uuid": "35381907-dc51-480d-aab5-57854dbbc63c",
-    "color": null,
-    "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
-    "content_type_asset_preview": null,
-    "metadata": {}
-  },
-  {
-    "name": "image",
-    "display_name": null,
-    "description": "",
-    "created_at": "2025-12-04T14:24:17.044Z",
-    "updated_at": "2025-12-04T14:25:22.562Z",
-    "id": 119474819260135,
-    "schema": {
-      "image": {
-        "type": "asset",
-        "pos": 0,
-        "required": true,
-        "filetypes": [
-          "images"
-        ],
-        "id": "lX8xhdy0TQi0zSYh237e1Q"
-      }
-    },
-    "image": null,
-    "preview_field": null,
-    "is_root": false,
-    "preview_tmpl": null,
-    "is_nestable": true,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "image",
-    "component_group_uuid": null,
+    "component_group_uuid": "4bf15590-1779-4468-94b8-8d343fc37543",
     "color": null,
     "icon": null,
     "internal_tags_list": [],
@@ -214,9 +180,9 @@
     "name": "link",
     "display_name": null,
     "description": "",
-    "created_at": "2025-12-05T10:36:00.594Z",
-    "updated_at": "2025-12-05T10:55:44.834Z",
-    "id": 119772612999749,
+    "created_at": "2026-01-20T12:27:43.726Z",
+    "updated_at": "2026-01-20T12:27:43.726Z",
+    "id": 136079211431231,
     "schema": {
       "link": {
         "type": "multilink",
@@ -250,17 +216,16 @@
     "name": "page",
     "display_name": null,
     "description": null,
-    "created_at": "2025-11-14T12:42:10.682Z",
-    "updated_at": "2025-12-05T10:36:50.752Z",
-    "id": 112371837680527,
+    "created_at": "2026-01-20T12:12:45.412Z",
+    "updated_at": "2026-01-20T12:29:59.048Z",
+    "id": 136075531932894,
     "schema": {
       "body": {
         "type": "bloks",
-        "id": "Uw1pigYmTOyIbjbudWSRFg",
+        "id": "SdLS9YU3TuGLABlaIfUDdQ",
         "restrict_type": "",
         "restrict_components": true,
         "component_whitelist": [
-          "image",
           "rich_text",
           "seo_fields",
           "link"
@@ -308,9 +273,9 @@
     "name": "rich_text",
     "display_name": null,
     "description": "",
-    "created_at": "2025-11-18T11:45:38.507Z",
-    "updated_at": "2025-11-18T11:46:08.516Z",
-    "id": 113773520931932,
+    "created_at": "2026-01-20T12:27:43.889Z",
+    "updated_at": "2026-01-20T12:27:43.889Z",
+    "id": 136079212094784,
     "schema": {
       "content": {
         "type": "richtext",
@@ -338,9 +303,9 @@
     "name": "seo_fields",
     "display_name": null,
     "description": "Fields to improve SEO",
-    "created_at": "2025-12-04T10:16:39.416Z",
-    "updated_at": "2025-12-04T14:27:11.063Z",
-    "id": 119413962414144,
+    "created_at": "2026-01-20T12:27:44.058Z",
+    "updated_at": "2026-01-20T12:27:44.058Z",
+    "id": 136079212787009,
     "schema": {
       "meta_title": {
         "type": "text",
