@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
+import node from '@astrojs/node';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -33,6 +34,7 @@ export default defineConfig({
 		}),
 	],
 	output: enableLivePreview ? 'server' : 'static',
+	adapter: enableLivePreview ? node({ mode: 'standalone' }) : undefined,
 	vite: {
 		plugins: [import.meta.env.DEV ? mkcert() : undefined, tailwindcss()].filter(
 			Boolean,
