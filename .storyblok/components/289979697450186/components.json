@@ -1,15 +1,84 @@
 [
   {
-    "name": "feature",
+    "name": "footer",
     "display_name": null,
-    "description": null,
-    "created_at": "2026-01-20T12:12:45.447Z",
-    "updated_at": "2026-01-20T12:12:45.447Z",
-    "id": 136075532076257,
+    "description": "",
+    "created_at": "2026-01-20T12:27:44.224Z",
+    "updated_at": "2026-01-20T12:27:44.224Z",
+    "id": 136079213466946,
     "schema": {
-      "name": {
+      "column_one_group": {
+        "type": "section",
+        "pos": 0,
+        "keys": [
+          "column_one",
+          "column_one_title"
+        ],
+        "id": "4zE4fHTcRw24ASF9LRkZVQ"
+      },
+      "column_one_title": {
         "type": "text",
-        "id": "hx5G_YopSY-Hsbep5Rua0A"
+        "pos": 1,
+        "id": "-4aff1r_T22H7Nset7NcsA"
+      },
+      "column_one": {
+        "type": "bloks",
+        "pos": 2,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "link"
+        ],
+        "id": "2NACwZJySpmmszITSk-xLQ"
+      },
+      "column_two_group": {
+        "type": "section",
+        "pos": 3,
+        "keys": [
+          "column_two_title",
+          "column_two"
+        ],
+        "id": "rQDPEbmlTge9-HKPvie6Tw"
+      },
+      "column_two_title": {
+        "type": "text",
+        "pos": 4,
+        "id": "XB5Fm8u-Q8WKfhE7HhZMpQ"
+      },
+      "column_two": {
+        "type": "bloks",
+        "pos": 5,
+        "id": "P3bfV2o5RlyrFJkRBT2v7g",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "link"
+        ]
+      },
+      "column_three_group": {
+        "type": "section",
+        "pos": 6,
+        "id": "38pelNUNRKqpedDfajOQ5Q",
+        "keys": [
+          "column_three",
+          "column_three_title"
+        ]
+      },
+      "column_three_title": {
+        "type": "text",
+        "pos": 7,
+        "id": "jSQHta6DRbCQvo_lajgEIA"
+      },
+      "column_three": {
+        "type": "bloks",
+        "pos": 8,
+        "id": "G55HtgYfTYGp4UfyyB4twA",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "link"
+        ],
+        "component_denylist": []
       }
     },
     "image": null,
@@ -19,8 +88,8 @@
     "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "feature",
-    "component_group_uuid": null,
+    "real_name": "footer",
+    "component_group_uuid": "4bf15590-1779-4468-94b8-8d343fc37543",
     "color": null,
     "icon": null,
     "internal_tags_list": [],
@@ -29,16 +98,66 @@
     "metadata": {}
   },
   {
-    "name": "grid",
+    "name": "global",
     "display_name": null,
-    "description": null,
-    "created_at": "2026-01-20T12:12:45.437Z",
-    "updated_at": "2026-01-20T12:12:45.437Z",
-    "id": 136075532035296,
+    "description": "",
+    "created_at": "2026-01-20T12:27:44.705Z",
+    "updated_at": "2026-01-20T12:27:44.705Z",
+    "id": 136079215441220,
     "schema": {
-      "columns": {
+      "header": {
         "type": "bloks",
-        "id": "UOYplI4BTJ6wr3UuS5SZjg"
+        "pos": 0,
+        "id": "WJD2KgSMRT-JuDvS_x1lqA",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "header"
+        ],
+        "minimum": 0,
+        "maximum": 1
+      },
+      "footer": {
+        "type": "bloks",
+        "pos": 1,
+        "id": "pJBGtUf_ToW7cyWnhjETFw",
+        "keys": [],
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "footer"
+        ],
+        "maximum": 1
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": true,
+    "preview_tmpl": null,
+    "is_nestable": false,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "global",
+    "component_group_uuid": "4bf15590-1779-4468-94b8-8d343fc37543",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "header",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-20T12:27:44.399Z",
+    "updated_at": "2026-01-20T12:27:44.399Z",
+    "id": 136079214187843,
+    "schema": {
+      "content": {
+        "type": "text",
+        "pos": 0,
+        "id": "wlvlsmvYT4mAB391EjCZEA"
       }
     },
     "image": null,
@@ -48,7 +167,43 @@
     "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "grid",
+    "real_name": "header",
+    "component_group_uuid": "4bf15590-1779-4468-94b8-8d343fc37543",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "link",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-20T12:27:43.726Z",
+    "updated_at": "2026-01-20T12:27:43.726Z",
+    "id": 136079211431231,
+    "schema": {
+      "link": {
+        "type": "multilink",
+        "pos": 0,
+        "required": true,
+        "id": "rLksE86nRqGDQ-9-FdmVZw"
+      },
+      "text": {
+        "type": "text",
+        "pos": 1,
+        "id": "NKvvMCs2STKwgM3hfqszWg"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "link",
     "component_group_uuid": null,
     "color": null,
     "icon": null,
@@ -62,12 +217,40 @@
     "display_name": null,
     "description": null,
     "created_at": "2026-01-20T12:12:45.412Z",
-    "updated_at": "2026-01-20T12:12:45.412Z",
+    "updated_at": "2026-01-20T12:29:59.048Z",
     "id": 136075531932894,
     "schema": {
       "body": {
         "type": "bloks",
-        "id": "SdLS9YU3TuGLABlaIfUDdQ"
+        "id": "SdLS9YU3TuGLABlaIfUDdQ",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "rich_text",
+          "seo_fields",
+          "link"
+        ],
+        "component_group_whitelist": []
+      },
+      "tab-e2daa2b5-aa40-4358-8375-aa675d5d76a7": {
+        "display_name": "SEO",
+        "keys": [
+          "seo"
+        ],
+        "pos": 0,
+        "type": "tab",
+        "id": "4tqitapAQ1iDdapnXV12pw"
+      },
+      "seo": {
+        "type": "bloks",
+        "pos": 2,
+        "maximum": 1,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "seo_fields"
+        ],
+        "id": "vcLF8vX5RpumFXPeryXlnw"
       }
     },
     "image": null,
@@ -87,16 +270,17 @@
     "metadata": {}
   },
   {
-    "name": "teaser",
+    "name": "rich_text",
     "display_name": null,
-    "description": null,
-    "created_at": "2026-01-20T12:12:45.426Z",
-    "updated_at": "2026-01-20T12:12:45.426Z",
-    "id": 136075531990239,
+    "description": "",
+    "created_at": "2026-01-20T12:27:43.889Z",
+    "updated_at": "2026-01-20T12:27:43.889Z",
+    "id": 136079212094784,
     "schema": {
-      "headline": {
-        "type": "text",
-        "id": "kj5I8dZSTFi3NImLyr5rNA"
+      "content": {
+        "type": "richtext",
+        "pos": 0,
+        "id": "mvFb06P3TRaQYl_0Y-e6XQ"
       }
     },
     "image": null,
@@ -106,7 +290,92 @@
     "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "teaser",
+    "real_name": "rich_text",
+    "component_group_uuid": null,
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "seo_fields",
+    "display_name": null,
+    "description": "Fields to improve SEO",
+    "created_at": "2026-01-20T12:27:44.058Z",
+    "updated_at": "2026-01-20T12:27:44.058Z",
+    "id": 136079212787009,
+    "schema": {
+      "meta_title": {
+        "type": "text",
+        "pos": 0,
+        "id": "L9qEsTmYSv-x3cZwxmhipA",
+        "max_length": 70,
+        "description": "Used for <title>. Aim for 50–60 characters. If empty, fallback to page title."
+      },
+      "meta_description": {
+        "type": "textarea",
+        "pos": 1,
+        "id": "77SondUtT9SQ63uvO1KXZQ",
+        "max_length": 160,
+        "description": "Used for meta description. Aim for 120–160 characters."
+      },
+      "canonical_url": {
+        "type": "text",
+        "pos": 2,
+        "id": "VsiSS5XVSemOoOYieW3bRw",
+        "regex": "^https?://",
+        "description": "Absolute URL of the canonical page. Example: https://www.example.com/page"
+      },
+      "og_image": {
+        "type": "asset",
+        "pos": 3,
+        "id": "-Z1QADAnT-qn8TQKtvIZyA",
+        "description": "1200×630 px recommended. Used for social sharing previews.",
+        "filetypes": [
+          "images"
+        ]
+      },
+      "meta_robots": {
+        "type": "option",
+        "pos": 4,
+        "use_uuid": true,
+        "id": "jAC3cCeqRvKladZQiCqVDg",
+        "description": "Controls search engine indexing/crawling.",
+        "options": [
+          {
+            "_uid": "d655c4c9-b961-41f2-9a0b-78d9bddd1418",
+            "name": "Index and follow",
+            "value": "index,follow"
+          },
+          {
+            "_uid": "206e2d53-3d72-42de-82b0-9b8da05e94d7",
+            "value": "noindex,follow",
+            "name": "Noindex but follow"
+          },
+          {
+            "_uid": "0b6d2390-6d60-4841-bf9b-a976fd69a659",
+            "value": "index,nofollow",
+            "name": "Index but nofollow"
+          },
+          {
+            "_uid": "4d650789-1bef-4642-94c0-42ecef57cfb3",
+            "value": "noindex,nofollow",
+            "name": "Noindex and nofollow"
+          }
+        ],
+        "exclude_empty_option": true
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "seo_fields",
     "component_group_uuid": null,
     "color": null,
     "icon": null,
