@@ -28,7 +28,7 @@ jobs:
       - name: Build for SSR
         run: pnpm build
         env:
-          ENABLE_LIVE_PREVIEW: 'true'
+          STORYBLOK_ENABLE_LIVE_PREVIEW: 'true'
           STORYBLOK_DELIVERY_API_TOKEN: ${{ secrets.STORYBLOK_DELIVERY_API_TOKEN }}
 
       - name: Deploy to Azure Web App
