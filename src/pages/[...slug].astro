@@ -18,7 +18,8 @@ export async function getStaticPaths() {
 }
 
 const isLivePreview =
-	import.meta.env.DEV || import.meta.env.STORYBLOK_LIVE_PREVIEW === 'true';
+	import.meta.env.DEV ||
+	import.meta.env.STORYBLOK_ENABLE_LIVE_PREVIEW === 'true';
 
 type StoryblokApiResponse<T> = {
 	data: {
