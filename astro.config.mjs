@@ -10,7 +10,7 @@ const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
 const { STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_PUBLISHED_TOKEN } = env;
 
 const enableLivePreview =
-	import.meta.env.DEV || env.ENABLE_LIVE_PREVIEW === 'true';
+	import.meta.env.DEV || env.STORYBLOK_ENABLE_LIVE_PREVIEW === 'true';
 
 export default defineConfig({
 	integrations: [
