@@ -13,6 +13,10 @@ import type {
 	StoryblokPage,
 } from '../../.storyblok/types/288498216560234/storyblok-components';
 
+export async function getStaticPaths() {
+	return await generateStaticPaths();
+}
+
 const isLivePreview =
 	import.meta.env.DEV || import.meta.env.STORYBLOK_LIVE_PREVIEW === 'true';
 
@@ -23,9 +27,6 @@ type StoryblokApiResponse<T> = {
 	};
 };
 
-export async function getStaticPaths() {
-	return await generateStaticPaths();
-}
 const { slug } = Astro.params;
 
 const storyblokApi = useStoryblokApi();

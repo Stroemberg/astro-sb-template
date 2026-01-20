@@ -13,9 +13,10 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"storyblok": "storyblok",
-		"storyblok:pull": "storyblok components pull --space 288498216560234",
-		"storyblok:types": "storyblok types generate --type-prefix Storyblok --space 288498216560234",
-		"storyblok:generate": "pnpm run storyblok:pull && pnpm run storyblok:types"
+		"storyblok:pull": "storyblok components pull --space 289979697450186",
+		"storyblok:types": "storyblok types generate --type-prefix Storyblok --space 289979697450186",
+		"storyblok:generate": "pnpm run storyblok:pull && pnpm run storyblok:types",
+		"storyblok:push": "storyblok components push --space 289979697450186 --from 288498216560234"
 	},
 	"engines": {
 		"node": ">=24.11.1"
