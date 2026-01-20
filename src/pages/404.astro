@@ -3,12 +3,16 @@ import { useStoryblokApi } from '@storyblok/astro';
 import Layout from '../layouts/Layout.astro';
 import type { StoryblokGlobal } from '../../.storyblok/types/288498216560234/storyblok-components';
 
+const isLivePreview =
+	import.meta.env.DEV ||
+	process.env.STORYBLOK_ENABLE_LIVE_PREVIEW === 'true';
+
 const storyblokApi = useStoryblokApi();
 let globalData;
 
 try {
 	const result = await storyblokApi.getStory('global', {
-		version: import.meta.env.DEV ? 'draft' : 'published',
+		version: isLivePreview ? 'draft' : 'published',
 	});
 	globalData = result.data;
 } catch (error) {
