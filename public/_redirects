@@ -1,0 +1,8 @@
+# Netlify/Cloudflare Pages redirect file
+# Format: /old-path /new-path STATUS
+# 301 = permanent redirect, 302 = temporary redirect
+
+# Examples:
+# /old-page /new-page 301
+# /blog/old-post /blog/new-post 301
+# /legacy/* /new/:splat 301

@@ -3,6 +3,7 @@ import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
 import node from '@astrojs/node';
+import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -13,6 +14,13 @@ const enableLivePreview =
 	import.meta.env.DEV || env.STORYBLOK_ENABLE_LIVE_PREVIEW === 'true';
 
 export default defineConfig({
+	site: 'https://example.com', // Replace with your production URL
+	redirects: {
+		// Add your permanent redirects here
+		// '/old-page': '/new-page',
+		// '/blog/old-post': '/blog/new-post',
+		'/invalid-path': '/',
+	},
 	integrations: [
 		storyblok({
 			accessToken: enableLivePreview
@@ -31,6 +39,9 @@ export default defineConfig({
 			enableFallbackComponent: true,
 			livePreview: enableLivePreview,
 			bridge: enableLivePreview,
+		}),
+		sitemap({
+			filter: (page) => !page.includes('/404'),
 		}),
 	],
 	output: enableLivePreview ? 'server' : 'static',
