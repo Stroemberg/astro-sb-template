@@ -15,6 +15,12 @@ const enableLivePreview =
 
 export default defineConfig({
 	site: 'https://example.com', // Replace with your production URL
+	redirects: {
+		// Add your permanent redirects here
+		// '/old-page': '/new-page',
+		// '/blog/old-post': '/blog/new-post',
+		'invalid-path': '/',
+	},
 	integrations: [
 		storyblok({
 			accessToken: enableLivePreview
