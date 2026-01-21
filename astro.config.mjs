@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
+import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -12,6 +13,7 @@ const enableLivePreview =
 	import.meta.env.DEV || env.ENABLE_LIVE_PREVIEW === 'true';
 
 export default defineConfig({
+	site: 'https://example.com', // Replace with your production URL
 	integrations: [
 		storyblok({
 			accessToken: enableLivePreview
@@ -30,6 +32,9 @@ export default defineConfig({
 			enableFallbackComponent: true,
 			livePreview: enableLivePreview,
 			bridge: enableLivePreview,
+		}),
+		sitemap({
+			filter: (page) => !page.includes('/404'),
 		}),
 	],
 	output: enableLivePreview ? 'server' : 'static',
