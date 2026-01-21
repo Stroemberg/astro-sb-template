@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
+import node from '@astrojs/node';
 import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
@@ -10,7 +11,7 @@ const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
 const { STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_PUBLISHED_TOKEN } = env;
 
 const enableLivePreview =
-	import.meta.env.DEV || env.ENABLE_LIVE_PREVIEW === 'true';
+	import.meta.env.DEV || env.STORYBLOK_ENABLE_LIVE_PREVIEW === 'true';
 
 export default defineConfig({
 	site: 'https://example.com', // Replace with your production URL
@@ -38,6 +39,7 @@ export default defineConfig({
 		}),
 	],
 	output: enableLivePreview ? 'server' : 'static',
+	adapter: enableLivePreview ? node({ mode: 'standalone' }) : undefined,
 	vite: {
 		plugins: [import.meta.env.DEV ? mkcert() : undefined, tailwindcss()].filter(
 			Boolean,
