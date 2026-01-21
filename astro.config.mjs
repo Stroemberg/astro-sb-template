@@ -19,7 +19,7 @@ export default defineConfig({
 		// Add your permanent redirects here
 		// '/old-page': '/new-page',
 		// '/blog/old-post': '/blog/new-post',
-		'invalid-path': '/',
+		'/invalid-path': '/',
 	},
 	integrations: [
 		storyblok({
